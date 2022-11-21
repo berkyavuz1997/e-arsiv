@@ -1,0 +1,23 @@
+{
+  "name": "e-arsiv",
+  "version": "1.0.0",
+  "description": "Basit ve kullanışlı E-Arşiv Portal (https://earsivportal.efatura.gov.tr) client kütüphanesi. Sadece E-Arşiv Portal giriş ve fatura bilgilerini kullanarak kolayca E-Arşiv fatura düzenlemek için kullanabilirsiniz. Kendi kişisel bilgisayarınızda veya sunucunuzda çalıştırabileceğiniz gibi tek başına bir bulut fonksiyonu olarak da deploy edip gerekli bilgileri göndererek (mesela bir http endpoint açarak) fatura kesebilirsiniz.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "e-arsiv",
+    "fatura",
+    "portal",
+    "gib",
+    "ivd",
+    "client"
+  ],
+  "author": "Berk Yaşar Yavuz",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.4",
+    "node-tcmb": "^0.2.1"
+  }
+}
