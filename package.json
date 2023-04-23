@@ -1,6 +1,6 @@
 {
   "name": "e-arsiv",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Basit ve kullanışlı E-Arşiv Portal (https://earsivportal.efatura.gov.tr) client kütüphanesi. Sadece E-Arşiv Portal giriş ve fatura bilgilerini kullanarak kolayca E-Arşiv fatura düzenlemek için kullanabilirsiniz. Kendi kişisel bilgisayarınızda veya sunucunuzda çalıştırabileceğiniz gibi tek başına bir bulut fonksiyonu olarak da deploy edip gerekli bilgileri göndererek (mesela bir http endpoint açarak) fatura kesebilirsiniz.",
   "main": "index.js",
   "scripts": {
