@@ -2,6 +2,7 @@
 // ****** Kütüphaneler ******
 // **************************
 const utils = require("./utils");
+const axios = require("axios");
 
 // **************************
 // ****** Tanımlamalar ******
@@ -65,13 +66,10 @@ async function giris(kullaniciKodu, sifre) {
   };
 
   // İsteği gönder
-  const resp = await utils.post(url, postData, headers);
-
-  //JSON formatına çevir
-  const obj = JSON.parse(resp);
+  const resp = await axios.post(url, postData, { headers: headers });
 
   // İçerisinden token döndür
-  return obj.token;
+  return resp.data.token;
 }
 
 /*
@@ -92,13 +90,10 @@ async function guvenliCikis(token) {
   };
 
   // İsteği gönder
-  const resp = await utils.post(url, postData, headers);
-
-  //JSON formatına çevir
-  const obj = JSON.parse(resp);
+  const resp = await axios.post(url, postData, { headers: headers });
 
   // Cevabı döndür
-  return obj.data.redirectUrl == "login.html";
+  return resp.data.data.redirectUrl == "login.html";
 }
 
 /*
@@ -168,13 +163,10 @@ async function komutCalistir(token, komut, sayfaAdi, data) {
   };
 
   // İsteği gönder
-  const resp = await utils.post(url, postData, headers);
-
-  //JSON formatına çevir
-  const obj = JSON.parse(resp);
+  const resp = await axios.post(url, postData, { headers: headers });
 
   // Cevabı döndür
-  return obj;
+  return resp.data;
 }
 
 // Varsayılan fatura detayları

@@ -1,4 +1,3 @@
-const https = require("https");
 const tcmb = require("node-tcmb");
 const moment = require("moment");
 
@@ -59,44 +58,6 @@ function calculateTaxFromTaxIncludedAmount(taxIncludedAmount, taxRate) {
   );
 }
 
-function post(url, data, headers) {
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Length": data.length,
-      ...headers,
-    },
-  };
-
-  return new Promise((resolve, reject) => {
-    const req = https.request(url, options, (res) => {
-      if (res.statusCode < 200 || res.statusCode > 299) {
-        return reject(new Error(`HTTP status code ${res.statusCode}`));
-      }
-
-      const body = [];
-      res.on("data", (chunk) => body.push(chunk));
-      res.on("end", () => {
-        const resString = Buffer.concat(body).toString();
-        resolve(resString);
-      });
-    });
-
-    req.on("error", (err) => {
-      reject(err);
-    });
-
-    req.on("timeout", () => {
-      req.destroy();
-      reject(new Error("Request time out"));
-    });
-
-    req.write(data);
-
-    req.end();
-  });
-}
-
 module.exports = {
   uid,
   previousDay,
@@ -107,5 +68,4 @@ module.exports = {
   calculateTaxIncludedAmount,
   calculateTaxFromTaxFreeAmount,
   calculateTaxFromTaxIncludedAmount,
-  post,
 };

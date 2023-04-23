@@ -1,6 +1,6 @@
 {
   "name": "e-arsiv",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Basit ve kullanışlı E-Arşiv Portal (https://earsivportal.efatura.gov.tr) client kütüphanesi. Sadece E-Arşiv Portal giriş ve fatura bilgilerini kullanarak kolayca E-Arşiv fatura düzenlemek için kullanabilirsiniz. Kendi kişisel bilgisayarınızda veya sunucunuzda çalıştırabileceğiniz gibi tek başına bir bulut fonksiyonu olarak da deploy edip gerekli bilgileri göndererek (mesela bir http endpoint açarak) fatura kesebilirsiniz.",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   "author": "Berk Yaşar Yavuz",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.3.6",
     "moment": "^2.29.4",
     "node-tcmb": "^0.2.1"
   },
